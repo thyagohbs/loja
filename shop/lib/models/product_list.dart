@@ -60,10 +60,9 @@ class ProductList with ChangeNotifier {
 
   Future<void> addProduct(Product product) async {
     final response = await http.post(
-      Uri.parse('${Constants.productBaseUrl}/products.json'),
+      Uri.parse('${Constants.productBaseUrl}.json'),
       body: jsonEncode(
         {
-          "id": product.id,
           "name": product.name,
           "description": product.description,
           "price": product.price,
@@ -121,7 +120,6 @@ class ProductList with ChangeNotifier {
       if (response.statusCode >= 400) {
         _items.insert(index, product);
         notifyListeners();
-
         throw HttpException(
           msg: 'Não foi possível excluir o produto.',
           statusCode: response.statusCode,
