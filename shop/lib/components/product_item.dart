@@ -8,7 +8,10 @@ import 'package:shop/utils/app_routes.dart';
 class ProductItem extends StatelessWidget {
   final Product product;
 
-  const ProductItem(
+  Color? errorColor;
+
+  // ignore: use_super_parameters
+  ProductItem(
     this.product, {
     Key? key,
   }) : super(key: key);
@@ -37,7 +40,7 @@ class ProductItem extends StatelessWidget {
             ),
             IconButton(
               icon: const Icon(Icons.delete),
-              color: Theme.of(context).errorColor,
+              color: errorColor,
               onPressed: () {
                 showDialog<bool>(
                   context: context,

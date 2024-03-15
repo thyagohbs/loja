@@ -6,7 +6,9 @@ import 'package:shop/models/cart_item.dart';
 class CartItemWidget extends StatelessWidget {
   final CartItem cartItem;
 
-  const CartItemWidget(this.cartItem, {Key? key}) : super(key: key);
+  Color? errorColor;
+
+  CartItemWidget(this.cartItem, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CartItemWidget extends StatelessWidget {
       key: ValueKey(cartItem.id),
       direction: DismissDirection.endToStart,
       background: Container(
-        color: Theme.of(context).errorColor,
+        color: errorColor,
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20),
         margin: const EdgeInsets.symmetric(
