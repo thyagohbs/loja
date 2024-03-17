@@ -10,7 +10,6 @@ class ProductItem extends StatelessWidget {
 
   Color? errorColor;
 
-  // ignore: use_super_parameters
   ProductItem(
     this.product, {
     Key? key,

@@ -8,7 +8,7 @@ class CartItemWidget extends StatelessWidget {
 
   Color? errorColor;
 
-  CartItemWidget(this.cartItem, {super.key});
+  CartItemWidget(this.cartItem, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
